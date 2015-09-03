@@ -1,3 +1,12 @@
+opencv3 (3.0.0-0ubuntu1ppa3~trusty1) trusty; urgency=low
+
+  * Added new imgcodecs library.
+  * Commited to rather painful renaming of all sub-packages to libopencv3-*
+    and removing the version number (was "2.4" then "3.0") in the package name
+    itself. e.g. libopencv-core3.0
+
+ -- Aaron Marburg <amarburg@notetofutureself.org> Thu, 03 Sep 2015 15:22:00 -0700
+
 opencv3 (3.0.0-0ubuntu1ppa2~trusty1) trusty; urgency=low
 
   * Unable to resolve how the ippicv_linux_*.tar.gz download fits into this.
