@@ -78,7 +78,7 @@ Description: computer vision library - libcv* translation package
  analysis, structural analysis, motion analysis and object tracking, object
  recognition, camera calibration and 3D reconstruction.
 
-Package: libopencv-dev
+Package: libopencv3-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends},
@@ -515,7 +515,7 @@ Multi-Arch: same
 Depends: ${misc:Depends},
 	libopencv3-flann-dev (= ${binary:Version}),
 	libopencv3-imgproc-dev (= ${binary:Version}),
-	libopencv3-features2d3(= ${binary:Version})
+	libopencv3-features2d(= ${binary:Version})
 Description: development files for libopencv-features2d
  This package contains the header files and static library needed to compile
  applications that use OpenCV (Open Computer Vision) Feature Detection and
@@ -611,7 +611,7 @@ Depends: ${misc:Depends},
 	libopencv3-ml-dev (= ${binary:Version}),
 	libopencv3-video-dev (= ${binary:Version}),
 	libopencv3-objdetect-dev (= ${binary:Version}),
-	libopencv3-contrib3.0 (= ${binary:Version})
+	libopencv3-contrib (= ${binary:Version})
 Description: development files for libopencv-contrib
  This package contains the header files and static library needed to compile
  applications that use OpenCV (Open Computer Vision) contrib library.
@@ -836,7 +836,7 @@ Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
 	libopencv3-core-dev (= ${binary:Version})
-Description: development files for libopencv-gpu3.0
+Description: development files for libopencv-gpu
  This package contains the header files and static library needed to compile
  applications that use OpenCV (Open Computer Vision) GPU library.
  .
