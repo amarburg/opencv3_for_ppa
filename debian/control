@@ -26,7 +26,7 @@ Build-Depends: debhelper (>= 9),
  python-support (>= 0.4.1),
  python-numpy,
  python-sphinx,
- ant, default-jdk, javahelper,
+ ant,
  texlive-fonts-extra, texlive-latex-extra, texlive-latex-recommended,
  latex-xcolor, texlive-fonts-recommended
 Standards-Version: 3.9.5
@@ -228,7 +228,6 @@ Depends: ${misc:Depends}, ${shlibs:Depends},
 	libopencv-gpu-dev (= ${binary:Version}),
 	libopencv-superres-dev (= ${binary:Version}),
 	libopencv-ocl-dev (= ${binary:Version}) [!ppc64el],
-	libopencv3.0-java (= ${source:Version}),
 	libopencv3.0-jni (= ${binary:Version}),
 	libcv-dev (= ${binary:Version}),
 	libhighgui-dev (= ${binary:Version}),
@@ -1064,50 +1063,6 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
 Description: computer vision OpenCL support library
  This package contains the OpenCV (Open Computer Vision) OpenCL runtime
  libraries.
- .
- The Open Computer Vision Library is a collection of algorithms and sample
- code for various computer vision problems. The library is compatible with
- IPL (Intel's Image Processing Library) and, if available, can use IPP
- (Intel's Integrated Performance Primitives) for better performance.
- .
- OpenCV provides low level portable data types and operators, and a set
- of high level functionalities for video acquisition, image processing and
- analysis, structural analysis, motion analysis and object tracking, object
- recognition, camera calibration and 3D reconstruction.
-
-Package: libopencv3.0-java
-Section: java
-Architecture: all
-Depends: ${java:Depends}, ${misc:Depends},
-	libopencv3.0-jni (>= ${source:Version})
-Recommends: ${java:Recommends}
-Description: Java bindings for the computer vision library
- This package contains Java bindings for the OpenCV (Open Computer Vision)
- library.
- .
- The Open Computer Vision Library is a collection of algorithms and sample
- code for various computer vision problems. The library is compatible with
- IPL (Intel's Image Processing Library) and, if available, can use IPP
- (Intel's Integrated Performance Primitives) for better performance.
- .
- OpenCV provides low level portable data types and operators, and a set
- of high level functionalities for video acquisition, image processing and
- analysis, structural analysis, motion analysis and object tracking, object
- recognition, camera calibration and 3D reconstruction.
-
-Package: libopencv3.0-jni
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-	libopencv-calib3d3.0 (= ${binary:Version}),
-	libopencv-ml3.0 (= ${binary:Version}),
-	libopencv-objdetect3.0 (= ${binary:Version}),
-	libopencv-highgui3.0 (= ${binary:Version}),
-	libopencv-video3.0 (= ${binary:Version}),
-	libopencv-contrib3.0 (= ${binary:Version}),
-	libopencv-photo3.0 (= ${binary:Version})
-Description: Java jni library for the computer vision library
- This package contains Java jni library for the OpenCV (Open Computer Vision)
- library.
  .
  The Open Computer Vision Library is a collection of algorithms and sample
  code for various computer vision problems. The library is compatible with

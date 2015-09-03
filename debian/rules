@@ -34,7 +34,7 @@ CMAKE_ARCH_FLAGS += -DWITH_1394=OFF -DWITH_V4L=OFF
 endif
 
 # For Java
-export JAVA_HOME=/usr/lib/jvm/default-java
+# export JAVA_HOME=/usr/lib/jvm/default-java
 
 CMAKE_FLAGS = \
 	-DCMAKE_INSTALL_PREFIX=/usr \
@@ -68,11 +68,11 @@ CMAKE_FLAGS = \
 # -DOPENCL_INCLUDE_DIR:PATH="/usr/include/CL/"
 
 %:
-	dh $@ --buildsystem=cmake --with python2 --with javahelper
+	dh $@ --buildsystem=cmake --with python2
 
 override_dh_clean:
 	rm -rf modules/python/src2/hdr_parser.pyc
-	rm -rf modules/java/generator/rst_parser.pyc
+	#rm -rf modules/java/generator/rst_parser.pyc
 	rm -rf modules/refman.rst
 
 	dh_clean -O--buildsystem=cmake
@@ -86,8 +86,8 @@ override_dh_install:
 	-rm --verbose -rf debian/tmp/usr/share/OpenCV/doc/license.txt
 
 	# change install path of java library
-	sed -i -e "s@share\/OpenCV\/java\/@lib\/jni\/@g" \
-		debian/tmp/usr/share/OpenCV/OpenCVModules-release.cmake
+	#sed -i -e "s@share\/OpenCV\/java\/@lib\/jni\/@g" \
+	#	debian/tmp/usr/share/OpenCV/OpenCVModules-release.cmake
 
 	for f in $$(ls obj-*/lib/libopencv_*_s.a); do \
 		cp --verbose --preserve=mode $$f debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/$$(basename $$f _s.a).a; done
