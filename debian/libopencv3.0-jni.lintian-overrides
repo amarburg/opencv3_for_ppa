@@ -1,0 +1,3 @@
+libopencv3.0-jni: package-name-doesnt-match-sonames libopencv-java248
+libopencv3.0-jni: shlib-without-versioned-soname usr/lib/libopencv_java248.so libopencv_java248.so
+libopencv3.0-jni: postinst-must-call-ldconfig usr/lib/libopencv_java248.so
