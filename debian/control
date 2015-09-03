@@ -1,4 +1,4 @@
-Source: opencv
+Source: opencv3
 Priority: optional
 Section: devel
 Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
