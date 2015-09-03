@@ -260,15 +260,15 @@ Description: computer vision Image Processing library
  analysis, structural analysis, motion analysis and object tracking, object
  recognition, camera calibration and 3D reconstruction.
 
- Package: libopencv3-imgcodecs-dev
- Section: libdevel
- Architecture: any
- Multi-Arch: same
- Depends: ${misc:Depends},
- 	libopencv3-core-dev (= ${binary:Version}),
- 	libopencv3-imgcodecs (= ${binary:Version}),
-	libavcodec-dev (>= 0.svn20080206),
-	libavformat-dev,
+Package: libopencv3-imgcodecs-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+ libopencv3-core-dev (= ${binary:Version}),
+ libopencv3-imgcodecs (= ${binary:Version}),
+ libavcodec-dev (>= 0.svn20080206),
+ libavformat-dev,
 	libswscale-dev,
 	libgtk2.0-dev,
 	libjasper-dev (>= 1.900.1),
@@ -278,18 +278,18 @@ Description: computer vision Image Processing library
 	libopenexr-dev (>= 1.4.0),
 	libraw1394-dev [!kfreebsd-amd64 !kfreebsd-i386 !hurd-i386],
 	libdc1394-22-dev [!kfreebsd-amd64 !kfreebsd-i386 !hurd-i386]
- Description: development files for libopencv-imcodecs
+Description: development files for libopencv-imcodecs
   This package contains the header files and static library needed to compile
   applications that use OpenCV (Open Computer Vision) Image Processing library.
 
- Package: libopencv3-imgcodecs
- Section: libs
- Architecture: any
- Multi-Arch: same
- Pre-Depends: ${misc:Pre-Depends}
- Depends: ${shlibs:Depends}, ${misc:Depends},
+Package: libopencv3-imgcodecs
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
  	libopencv3-core (= ${binary:Version})
- Description: computer vision Image Processing library
+Description: computer vision Image Processing library
   This package contains the OpenCV (Open Computer Vision) Image Processing
   runtime libraries.
 
