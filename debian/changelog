@@ -1,3 +1,9 @@
+opencv (3.0.0-0ubuntu1ppa1~trusty1) trust; urgency=low
+
+  * Update to "3.0.0" tag from OpenCV github.
+
+  -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 3 Sept 01:12:00 +0900s
+
 opencv (2.4.8+dfsg1-2ubuntu1) trusty; urgency=medium
 
   * Merge with Debian, remaining changes:
@@ -12,7 +18,7 @@ opencv (2.4.8+dfsg1-2ubuntu1) trusty; urgency=medium
 
 opencv (2.4.8+dfsg1-2) unstable; urgency=medium
 
-  * Update debian/control. 
+  * Update debian/control.
     - Add libopencv-java and libopencv-jni to Depends of libopencv-dev.
     - Update depends of libopencv-jni, libopencv-java and libopencv-dev.
   * Update debian/libopencv2.4-jni.install.
@@ -72,7 +78,7 @@ opencv (2.4.6.1+dfsg-2) unstable; urgency=low
 
   [ Anton Gladky ]
   * Replace libeigen2-dev by libeigen3-dev. (Closes: #726155)
-  
+
   [ Nobuhiro Iwamatsu ]
   * FTBFS on sparc64. (Closes: #714923)
     Add patches/change_type_from_int_to_Atomic_word.
@@ -81,7 +87,7 @@ opencv (2.4.6.1+dfsg-2) unstable; urgency=low
 
 opencv (2.4.6.1+dfsg-2ubuntu5) trusty; urgency=medium
 
-  * Don't build OpenGL on armhf; not useful there.  
+  * Don't build OpenGL on armhf; not useful there.
 
  -- Iain Lane <iain.lane@canonical.com>  Thu, 16 Jan 2014 11:19:15 +0000
 
@@ -119,7 +125,7 @@ opencv (2.4.6.1+dfsg-2) unstable; urgency=low
 
   [ Anton Gladky ]
   * Replace libeigen2-dev by libeigen3-dev. (Closes: #726155)
-  
+
   [ Nobuhiro Iwamatsu ]
   * FTBFS on sparc64. (Closes: #714923)
     Add patches/change_type_from_int_to_Atomic_word.
@@ -283,7 +289,7 @@ opencv (2.4.0+dfsg-0exp1) experimental; urgency=low
     - 0005-build-static-libs.patch
     - 0007-typos-in-strings-docs.patch
     - 0013_drop_asm_types_h_kfreebsd.patch
-	
+
  -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Wed, 23 May 2012 12:42:17 +0900
 
 opencv (2.3.1-10) unstable; urgency=high
@@ -314,12 +320,12 @@ opencv (2.3.1-8) unstable; urgency=low
 opencv (2.3.1-7) unstable; urgency=low
 
   * Update debian/libopencv-core-dev.install.
-    - Change install path of OpenCVConfig.cmake from usr/share/opencv/ 
+    - Change install path of OpenCVConfig.cmake from usr/share/opencv/
       to usr/share/OpenCV. (Closes: #658196)
-    - usr/share/OpenCV/OpenCVConfig-version.cmake was added to the 
+    - usr/share/OpenCV/OpenCVConfig-version.cmake was added to the
       installation file of libopencv-core-dev.
-  * Add debian/*-dev.docs. 
-    This provides README.Debian with *-dev packages. 
+  * Add debian/*-dev.docs.
+    This provides README.Debian with *-dev packages.
 
  -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Thu, 02 Feb 2012 02:39:05 +0900
 
@@ -486,7 +492,7 @@ opencv (2.1.0-4) unstable; urgency=low
 
   * Fix install path of opencv-doc (Closes: #610803).
   * Fix FTBFS on gcc-4.5(Closes: #607086, #618045).
-    - Add patches/fix_stdint_gcc45.patch 
+    - Add patches/fix_stdint_gcc45.patch
 
  -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Wed, 16 Mar 2011 01:55:22 +0900
 
@@ -543,7 +549,7 @@ opencv (2.0.0-4) unstable; urgency=low
 
   * Update debian/control.
     - Bumped standards-version to 3.8.4. No changes needed.
-  * Change install path of python-opencv. (Closes: #565121)  
+  * Change install path of python-opencv. (Closes: #565121)
 
  -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Sun, 14 Mar 2010 13:19:00 +0900
 
@@ -554,7 +560,7 @@ opencv (2.0.0-3) unstable; urgency=low
   * Remove cvconfig.h from libcv-dev package. (Closes: #559857)
     Update libcv-dev.install and backport r2242 of commit from upstream.
     Thanks to Filippo Giunchedi.
-    debian/patches/110_backport_r2242.diff 
+    debian/patches/110_backport_r2242.diff
   * Fix FTBFS with GCC 4.4. (Closes: #562742)
     Backport r2255 of commit from upstream. Thanks to Filippo Giunchedi.
     debian/patches/110_backport_r2255.diff
@@ -592,14 +598,14 @@ opencv (2.0.0-1) unstable; urgency=low
     120_header_warnings.diff
   * Remove debian/patches
     - Merge to upstream
-      030_install_hook.diff      
+      030_install_hook.diff
       100_ffmpeg_updates.diff
       210_openmp_compilation.diff
       300_fix_segfault_in_window_gtk.diff
       400_ffmpeg_splitting_autofoo.diff
       410_ffmpeg_use_swscale.diff
       420_typedef_longint.diff
-      430_highgui_jpeg_camera.diff 
+      430_highgui_jpeg_camera.diff
     - Don't need new version
       010_ffmpeg_linking.diff
       050_rebootstrap.diff
@@ -990,4 +996,3 @@ opencv (0.9.5-1) unstable; urgency=low
   * Initial release.
 
  -- Sam Hocevar (Debian packages) <sam+deb@zoy.org>  Thu, 22 Apr 2004 14:55:19 +0200
-
