@@ -88,7 +88,6 @@ Depends: ${misc:Depends}, ${shlibs:Depends},
 	libopencv3-calib3d-dev (= ${binary:Version}),
 	libopencv3-flann-dev (= ${binary:Version}),
 	libopencv3-features2d-dev (= ${binary:Version}),
-	libopencv3-contrib-dev (= ${binary:Version}),
 	libopencv3-ts-dev (= ${binary:Version}),
 	libopencv3-photo-dev (= ${binary:Version}),
 	libopencv3-videostab-dev (= ${binary:Version}),
@@ -537,56 +536,6 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
 Description: computer vision Feature Detection and Descriptor Extraction library
  This package contains the OpenCV (Open Computer Vision) Feature Detection
  and Descriptor Extraction runtime libraries.
- .
- The Open Computer Vision Library is a collection of algorithms and sample
- code for various computer vision problems. The library is compatible with
- IPL (Intel's Image Processing Library) and, if available, can use IPP
- (Intel's Integrated Performance Primitives) for better performance.
- .
- OpenCV provides low level portable data types and operators, and a set
- of high level functionalities for video acquisition, image processing and
- analysis, structural analysis, motion analysis and object tracking, object
- recognition, camera calibration and 3D reconstruction.
-
-Package: libopencv3-contrib-dev
-Section: libdevel
-Architecture: any
-Multi-Arch: same
-Depends: ${misc:Depends},
-	libopencv3-calib3d-dev (= ${binary:Version}),
-	libopencv3-highgui-dev (= ${binary:Version}),
-	libopencv3-ml-dev (= ${binary:Version}),
-	libopencv3-video-dev (= ${binary:Version}),
-	libopencv3-objdetect-dev (= ${binary:Version}),
-	libopencv3-contrib (= ${binary:Version})
-Description: development files for libopencv-contrib
- This package contains the header files and static library needed to compile
- applications that use OpenCV (Open Computer Vision) contrib library.
- .
- The Open Computer Vision Library is a collection of algorithms and sample
- code for various computer vision problems. The library is compatible with
- IPL (Intel's Image Processing Library) and, if available, can use IPP
- (Intel's Integrated Performance Primitives) for better performance.
- .
- OpenCV provides low level portable data types and operators, and a set
- of high level functionalities for video acquisition, image processing and
- analysis, structural analysis, motion analysis and object tracking, object
- recognition, camera calibration and 3D reconstruction.
-
-Package: libopencv3-contrib
-Section: libs
-Architecture: any
-Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${misc:Depends},
-	libopencv3-calib3d (= ${binary:Version}),
-	libopencv3-highgui (= ${binary:Version}),
-	libopencv3-ml (= ${binary:Version}),
-	libopencv3-video (= ${binary:Version}),
-	libopencv3-objdetect (= ${binary:Version})
-Description: computer vision contrib library
- This package contains the OpenCV (Open Computer Vision) contrib
- runtime libraries.
  .
  The Open Computer Vision Library is a collection of algorithms and sample
  code for various computer vision problems. The library is compatible with
