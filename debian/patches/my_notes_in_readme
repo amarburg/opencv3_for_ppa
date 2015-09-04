@@ -1,0 +1,22 @@
+Description: Added some of my own notes about the PPA-ization to the README
+Author: Aaron Marburg <amarburg@notetofutureself.org>
+Origin: other
+Forwarded: no
+Last-Update: <2015-09-04>
+
+--- opencv3-3.0.0.orig/README.md
++++ opencv3-3.0.0/README.md
+@@ -20,3 +20,13 @@ Summary of guidelines:
+ * Include tests and documentation;
+ * Clean up "oops" commits before submitting;
+ * Follow the coding style guide.
++
++#### Things I broke in making the PPA
++
++* Didn't forward-port any of the non-Linux, non-x64 patches
++* Stripped out Java support
++* Disabled compilation of samples/  ( BUILD_EXAMPLES=OFF in rules )
++* The build-static-libs patch has been applied but there's a dependency problem
++  so it's been neutered
++* Added code to skip .AppleDouble directories when glob-adding paths & file
++  in modules/
