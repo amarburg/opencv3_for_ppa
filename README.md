@@ -26,3 +26,7 @@ Summary of guidelines:
 * Didn't forward-port any of the non-Linux, non-x64 patches
 * Stripped out Java support
 * Disabled compilation of samples/  ( BUILD_EXAMPLES=OFF in rules )
+* The build-static-libs patch has been applied but there's a dependency problem
+  so it's been neutered
+* Added code to skip .AppleDouble directories when glob-adding paths & file
+  in modules/

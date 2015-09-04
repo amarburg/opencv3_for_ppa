@@ -1,0 +1,70 @@
+Description: Directory globs used to navigate the modules/ tree should ignore
+              dot-directories.  Causes trouble when source is mounted over SMB or
+              AFP which result in .AppleDouble or .DS_Store directories being
+             generated.
+Author: Aaron Marburg <amarburg@notetofutureself.org>
+Forwarded: no
+Last-Update: <2015-09-04>
+
+diff --git a/cmake/OpenCVModule.cmake b/cmake/OpenCVModule.cmake
+index 0e18031..86b86dd 100644
+--- a/cmake/OpenCVModule.cmake
++++ b/cmake/OpenCVModule.cmake
+@@ -266,16 +266,23 @@ macro(ocv_glob_modules)
+     if(__ocvmodules)
+       list(SORT __ocvmodules)
+       foreach(mod ${__ocvmodules})
+-        get_filename_component(__modpath "${__path}/${mod}" ABSOLUTE)
+-        if(EXISTS "${__modpath}/CMakeLists.txt")
++        ## Skip any .* directories (e.g. .AppleDouble, .DS_Store)
++        ## Would be easier in CMake > 3.?? which has continue()
++        if(NOT mod MATCHES "^\\.(.*)")
+
+-          list(FIND __directories_observed "${__modpath}" __pathIdx)
+-          if(__pathIdx GREATER -1)
+-            message(FATAL_ERROR "The module from ${__modpath} is already loaded.")
++          get_filename_component(__modpath "${__path}/${mod}" ABSOLUTE)
++
++          if(EXISTS "${__modpath}/CMakeLists.txt")
++
++            list(FIND __directories_observed "${__modpath}" __pathIdx)
++            if(__pathIdx GREATER -1)
++              message(FATAL_ERROR "The module from ${__modpath} is already loaded.")
++            endif()
++            list(APPEND __directories_observed "${__modpath}")
++
++            add_subdirectory("${__modpath}" "${CMAKE_CURRENT_BINARY_DIR}/${mod}/.${mod}")
+           endif()
+-          list(APPEND __directories_observed "${__modpath}")
+
+-          add_subdirectory("${__modpath}" "${CMAKE_CURRENT_BINARY_DIR}/${mod}/.${mod}")
+         endif()
+       endforeach()
+     endif()
+@@ -620,10 +627,26 @@ macro(ocv_glob_module_sources)
+   file(GLOB_RECURSE lib_srcs
+        "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp"
+   )
++
++  ## Too specific of a hammer, but it works
++  FOREACH(item ${lib_srcs})
++    IF(${item} MATCHES ".AppleDouble")
++      LIST(REMOVE_ITEM lib_srcs ${item})
++    ENDIF()
++  ENDFOREACH()
++
+   file(GLOB_RECURSE lib_int_hdrs
+        "${CMAKE_CURRENT_LIST_DIR}/src/*.hpp"
+        "${CMAKE_CURRENT_LIST_DIR}/src/*.h"
+   )
++
++  ## Too specific of a hammer, but it works
++  FOREACH(item ${lib_int_hdrs})
++    IF(${item} MATCHES ".AppleDouble")
++      LIST(REMOVE_ITEM lib_int_hdrs ${item})
++    ENDIF()
++  ENDFOREACH()
++
+   file(GLOB lib_hdrs
+        "${CMAKE_CURRENT_LIST_DIR}/include/opencv2/*.hpp"
+        "${CMAKE_CURRENT_LIST_DIR}/include/opencv2/${name}/*.hpp"
