@@ -1,6 +1,11 @@
 opencv3 (3.0.0-0ubuntu1ppa4~trusty1) trusty; urgency=low
 
-  * Trouble from installer re pkgconfig file?
+  * Forward-port a relevant subset of the patches from 2.4.8:
+    build-static-libs, fix_path_of_opencl_headers, support_multiarch
+  * Remove dependencies on (let's see what happens):
+      ant,
+      texlive-fonts-extra, texlive-latex-extra, texlive-latex-recommended,
+      latex-xcolor, texlive-fonts-recommended
 
  -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 03 Sep 2015 16:36:00 -0700
 
