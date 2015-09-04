@@ -1,3 +1,9 @@
+opencv3 (3.0.0-0ubuntu1ppa8~trusty1) trusty; urgency=low
+
+  * Removed the legacy packages.
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 04 Sep 2015 13:47:00 -0700
+
 opencv3 (3.0.0-0ubuntu1ppa7~trusty1) trusty; urgency=low
 
   * Since I disabled creation of static libraries, had to remove from the *-dev.install
