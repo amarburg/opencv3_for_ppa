@@ -1,7 +1,25 @@
-opencv3 (3.0.0-0ubuntu1ppa4~trusty1) trusty; urgency=low
+opencv3 (3.0.0-0ubuntu1ppa7~trusty1) trusty; urgency=low
+
+  * Since I disabled creation of static libraries, had to remove from the *-dev.install
+    file as well.
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 04 Sep 2015 13:47:00 -0700
+
+opencv3 (3.0.0-0ubuntu1ppa6~trusty1) trusty; urgency=low
+
+  * Corrected problem with specification of pkgconfig files for installation.
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 04 Sep 2015 13:13:00 -0700
+
+opencv3 (3.0.0-0ubuntu1ppa5~trusty1) trusty; urgency=low
 
   * Forward-port a relevant subset of the patches from 2.4.8:
     build-static-libs, fix_path_of_opencl_headers, support_multiarch
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 03 Sep 2015 16:36:00 -0700
+
+opencv3 (3.0.0-0ubuntu1ppa4~trusty1) trusty; urgency=low
+
   * Remove dependencies on (let's see what happens):
       ant,
       texlive-fonts-extra, texlive-latex-extra, texlive-latex-recommended,

@@ -1,3 +1,2 @@
 usr/include/opencv2/imgcodecs/*
-usr/lib/*/libopencv_imgcodecs.a
 usr/lib/*/libopencv_imgcodecs.so
