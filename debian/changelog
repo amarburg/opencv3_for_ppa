@@ -1,3 +1,9 @@
+opencv3 (3.0.0-0ubuntu1ppa10~trusty1) trusty; urgency=low
+
+  * Removed the ts packages as well.
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 04 Sep 2015 15:37:00 -0700
+
 opencv3 (3.0.0-0ubuntu1ppa9~trusty1) trusty; urgency=low
 
   * Removed the contrib packages as well.
