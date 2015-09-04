@@ -1,0 +1,3 @@
+build-static-libs
+support_multiarch
+fix_path_of_opencl_headers

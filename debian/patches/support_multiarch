@@ -1,0 +1,35 @@
+Description: Support multiarch
+Author: Aaron Marburg <amarburg@notetofutureself.org>
+Forwarded: no
+Last-Update: <2015-09-04>
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d9a17b3..1f46ff3 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -370,7 +370,7 @@ else()
+     set(OPENCV_JAR_INSTALL_PATH java)
+     set(OPENCV_OTHER_INSTALL_PATH   etc)
+   else()
+-    set(OPENCV_LIB_INSTALL_PATH     lib${LIB_SUFFIX})
++    set(OPENCV_LIB_INSTALL_PATH     ${CMAKE_INSTALL_LIBDIR}${LIB_SUFFIX})
+     set(OPENCV_3P_LIB_INSTALL_PATH  share/OpenCV/3rdparty/${OPENCV_LIB_INSTALL_PATH})
+     set(OPENCV_SAMPLES_SRC_INSTALL_PATH    share/OpenCV/samples)
+     set(OPENCV_JAR_INSTALL_PATH share/OpenCV/java)
+@@ -380,7 +380,7 @@ else()
+
+   math(EXPR SIZEOF_VOID_P_BITS "8 * ${CMAKE_SIZEOF_VOID_P}")
+   if(LIB_SUFFIX AND NOT SIZEOF_VOID_P_BITS EQUAL LIB_SUFFIX)
+-    set(OPENCV_CONFIG_INSTALL_PATH lib${LIB_SUFFIX}/cmake/opencv)
++    set(OPENCV_CONFIG_INSTALL_PATH ${CMAKE_INSTALL_LIBDIR}${LIB_SUFFIX}/cmake/opencv)
+   else()
+     set(OPENCV_CONFIG_INSTALL_PATH share/OpenCV)
+   endif()
+@@ -483,6 +483,7 @@ if(UNIX)
+   find_package(PkgConfig QUIET)
+   include(CheckFunctionExists)
+   include(CheckIncludeFile)
++  include(GNUInstallDirs)
+
+   if(NOT APPLE)
+     CHECK_INCLUDE_FILE(pthread.h HAVE_LIBPTHREAD)

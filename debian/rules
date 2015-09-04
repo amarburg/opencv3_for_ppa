@@ -89,8 +89,8 @@ override_dh_install:
 	#sed -i -e "s@share\/OpenCV\/java\/@lib\/jni\/@g" \
 	#	debian/tmp/usr/share/OpenCV/OpenCVModules-release.cmake
 
-	#for f in $$(ls obj-*/lib/libopencv_*_s.a); do \
-	#	cp --verbose --preserve=mode $$f debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/$$(basename $$f _s.a).a; done
+	for f in $$(ls obj-*/lib/libopencv_*_s.a); do \
+	  	cp --verbose --preserve=mode $$f debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/$$(basename $$f _s.a).a; done
 	dh_install -O--buildsystem=cmake --list-missing
 
 override_dh_fixperms-indep:

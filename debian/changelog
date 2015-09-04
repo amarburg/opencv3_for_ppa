@@ -1,4 +1,4 @@
-opencv3 (3.0.0-0ubuntu1ppa3~trusty1) trusty; urgency=low
+opencv3 (3.0.0-0ubuntu1ppa4~trusty1) trusty; urgency=low
 
   * Trouble from installer re pkgconfig file?
 
