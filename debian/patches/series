@@ -1,5 +1,4 @@
 build-static-libs
 support_multiarch
 fix_path_of_opencl_headers
-ignore_dot_files_in_module_globs
 my_notes_in_readme
