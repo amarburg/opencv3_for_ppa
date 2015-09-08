@@ -1,0 +1,3 @@
+usr/include/opencv2/shape.hpp
+usr/include/opencv2/shape/*
+usr/lib/*/libopencv_shape.so

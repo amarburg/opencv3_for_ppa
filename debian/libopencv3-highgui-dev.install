@@ -1,2 +1,5 @@
+usr/include/opencv2/highgui.hpp
 usr/include/opencv2/highgui/*
+usr/include/opencv/highgui.h
+usr/include/opencv/cvwimage.h
 usr/lib/*/libopencv_highgui.so

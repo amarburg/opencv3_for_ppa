@@ -1,0 +1,3 @@
+usr/include/opencv2/viz.hpp
+usr/include/opencv2/viz/*
+usr/lib/*/libopencv_viz.so
