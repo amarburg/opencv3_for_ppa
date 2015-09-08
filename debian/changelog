@@ -5,7 +5,7 @@ opencv3 (3.0.0-0ubuntu1ppa13~trusty1) trusty; urgency=low
   * Removed the libopencv3-ocl-* packages.
   * Created the -hal, -shape, -videoio, and -viz packages.
 
- -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 08 Sep 2015 02:35:00 -0700
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Tue, 08 Sep 2015 02:35:00 -0700
 
 opencv3 (3.0.0-0ubuntu1ppa12~trusty1) trusty; urgency=low
 
