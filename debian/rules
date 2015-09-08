@@ -58,6 +58,8 @@ CMAKE_FLAGS = \
 	-DWITH_PNG=ON	\
 	-DWITH_TIFF=ON	\
 	-DWITH_OPENEXR=ON \
+	-DWITH_OPENCL=ON \
+	-DWITH_OPENMP=ON \
 	-DWITH_PVAPI=ON	\
 	-DWITH_UNICAP=OFF	\
 	-DWITH_EIGEN=ON \
@@ -69,7 +71,7 @@ CMAKE_FLAGS = \
 # -DOPENCL_INCLUDE_DIR:PATH="/usr/include/CL/"
 
 %:
-	dh $@ --buildsystem=cmake --with python2
+	dh $@ --buildsystem=cmake --with python2 --parallel
 
 override_dh_clean:
 	rm -rf modules/python/src2/hdr_parser.pyc

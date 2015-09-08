@@ -2,6 +2,7 @@ opencv3 (3.0.0-0ubuntu1ppa13~trusty1) trusty; urgency=low
 
   * Took /usr/share/OpenCV/{doc,sample}/* out of the opencv-doc.install files.
     Why aren't they being generated.
+  * Removed the libopencv3-ocl-* packages.
 
  -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 08 Sep 2015 02:35:00 -0700
 
