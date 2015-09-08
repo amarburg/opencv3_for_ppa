@@ -87,4 +87,4 @@ opencv3 (3.0.0-0ubuntu1ppa1~trusty1) trusty; urgency=low
 
   * Update to "3.0.0" tag from OpenCV github.
 
- -- Aaron Marburg <amarburg@notetofutureself.org>   Thu, 3 Sep 2015 01:12:00 +0000
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Thu, 3 Sep 2015 01:12:00 +0000

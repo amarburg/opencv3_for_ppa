@@ -1,6 +1,6 @@
 # header files
 usr/include/opencv2/core.hpp
-usr/include/opencv2/cvconfig.hpp
+usr/include/opencv2/cvconfig.h
 usr/include/opencv2/core/*
 usr/include/opencv2/opencv.hpp
 usr/include/opencv2/opencv_modules.hpp
@@ -9,6 +9,7 @@ usr/include/opencv/cv.hpp
 usr/include/opencv/cxeigen.hpp
 usr/include/opencv/cvaux.h
 usr/include/opencv/cvaux.hpp
+usr/include/opencv/cxcore.h
 usr/include/opencv/cxcore.hpp
 usr/include/opencv/cxmisc.h
 # libraries
