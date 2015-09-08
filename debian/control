@@ -350,6 +350,7 @@ Multi-Arch: same
 Depends: ${misc:Depends},
  libopencv3-core-dev (= ${binary:Version}),
  libopencv3-viz (= ${binary:Version}),
+ libvtk6-dev
 Description: development files for libopencv-viz
   This package contains the header files and static library needed to compile
   applications that use OpenCV (Open Computer Vision) Image Processing library.
@@ -360,7 +361,8 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends},
- 	libopencv3-core (= ${binary:Version})
+ 	libopencv3-core (= ${binary:Version}),
+	libvtk6
 Description: computer vision Image Processing library
   This package contains the OpenCV (Open Computer Vision) Image Processing
   runtime libraries.

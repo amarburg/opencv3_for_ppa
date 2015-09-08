@@ -1,3 +1,9 @@
+opencv3 (3.0.0-0ubuntu1ppa14~trusty1) trusty; urgency=low
+
+  * Need to add dependency on VTK for -viz package.
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Tue, 08 Sep 2015 04:37:00 -0700
+
 opencv3 (3.0.0-0ubuntu1ppa13~trusty1) trusty; urgency=low
 
   * Took /usr/share/OpenCV/{doc,sample}/* out of the opencv-doc.install files.
