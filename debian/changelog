@@ -1,4 +1,10 @@
-opencv3 (3.0.0-0ubuntu1ppa14~trusty1) trusty; urgency=low
+opencv3 (3.0.0-0ubuntu1ppa15~trusty1) trusty; urgency=low
+
+  * Updated VTK dependencies.  Need to find way to test building locally.
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Wed, 09 Sep 2015 10:05:00 -0700
+
+oopencv3 (3.0.0-0ubuntu1ppa14~trusty1) trusty; urgency=low
 
   * Need to add dependency on VTK for -viz package.
 
