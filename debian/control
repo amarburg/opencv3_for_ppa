@@ -21,13 +21,12 @@ Build-Depends: debhelper (>= 9),
  liblapack-dev (>= 3.2.1),
  libtbb-dev [i386 amd64 ia64 powerpc ppc64],
  libeigen3-dev,
- ocl-icd-opencl-dev [!ppc64el],
  python-dev,
  python-support (>= 0.4.1),
  python-numpy,
  python-sphinx,
- libvtk6,
- libvtk6-dev
+ libvtk5.8,
+ libvtk5-dev
 Standards-Version: 3.9.5
 Vcs-Git: git://anonscm.debian.org/debian-science/packages/opencv.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=debian-science/packages/opencv.git;a=summary
@@ -352,7 +351,7 @@ Multi-Arch: same
 Depends: ${misc:Depends},
  libopencv3-core-dev (= ${binary:Version}),
  libopencv3-viz (= ${binary:Version}),
- libvtk6-dev
+ libvtk5-dev
 Description: development files for libopencv-viz
   This package contains the header files and static library needed to compile
   applications that use OpenCV (Open Computer Vision) Image Processing library.
@@ -364,7 +363,7 @@ Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends},
  	libopencv3-core (= ${binary:Version}),
-	libvtk6
+	libvtk5.8
 Description: computer vision Image Processing library
   This package contains the OpenCV (Open Computer Vision) Image Processing
   runtime libraries.

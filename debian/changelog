@@ -1,8 +1,16 @@
-opencv3 (3.0.0-0ubuntu1ppa15~trusty1) trusty; urgency=low
+opencv3 (3.0.0-0ubuntu1ppa16~precise1) precise; urgency=low
+
+  * Disabling OpenCL.  Where is ocl-icd-opencl-dev package?
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Wed, 09 Sep 2015 03:17:00 -0700
+
+opencv3 (3.0.0-0ubuntu1ppa15~precise1) precise; urgency=low
 
   * Updated VTK dependencies.  Need to find way to test building locally.
+  * Attempting to build in precise as well:
+  * Downgraded vtk dependencies to version 5
 
- -- Aaron Marburg <amarburg@notetofutureself.org>  Wed, 09 Sep 2015 10:05:00 -0700
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Wed, 09 Sep 2015 02:52:00 -0700
 
 oopencv3 (3.0.0-0ubuntu1ppa14~trusty1) trusty; urgency=low
 
