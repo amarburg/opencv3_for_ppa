@@ -1,3 +1,9 @@
+opencv3 (3.0.0-0ubuntu1ppa17~precise1) precise; urgency=low
+
+  * Introduced patch which fixes incompatibility with older versions of libavcodec.
+
+ -- Aaron Marburg <amarburg@notetofutureself.org>  Wed, 10 Sep 2015 20:35:00 -0700
+
 opencv3 (3.0.0-0ubuntu1ppa16~precise1) precise; urgency=low
 
   * Disabling OpenCL.  Where is ocl-icd-opencl-dev package?
