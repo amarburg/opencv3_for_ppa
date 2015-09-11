@@ -1,0 +1,22 @@
+diff --git a/modules/videoio/src/cap_ffmpeg_impl.hpp b/modules/videoio/src/cap_ffmpeg_impl.hpp
+index 96b8b68..b8525a4 100644
+--- a/modules/videoio/src/cap_ffmpeg_impl.hpp
++++ b/modules/videoio/src/cap_ffmpeg_impl.hpp
+@@ -1543,7 +1543,7 @@ void CvVideoWriter_FFMPEG::close()
+ #define CV_PRINTABLE_CHAR(ch) ((ch) < 32 ? '?' : (ch))
+ #define CV_TAG_TO_PRINTABLE_CHAR4(tag) CV_PRINTABLE_CHAR((tag) & 255), CV_PRINTABLE_CHAR(((tag) >> 8) & 255), CV_PRINTABLE_CHAR(((tag) >> 16) & 255), CV_PRINTABLE_CHAR(((tag) >> 24) & 255)
+ 
+-static inline bool cv_ff_codec_tag_match(const AVCodecTag *tags, enum AVCodecID id, unsigned int tag)
++static inline bool cv_ff_codec_tag_match(const AVCodecTag *tags, enum CV_CODEC_ID id, unsigned int tag)
+ {
+     while (tags->id != AV_CODEC_ID_NONE)
+     {
+@@ -1553,7 +1553,7 @@ static inline bool cv_ff_codec_tag_match(const AVCodecTag *tags, enum AVCodecID
+     }
+     return false;
+ }
+-static inline bool cv_ff_codec_tag_list_match(const AVCodecTag *const *tags, enum AVCodecID id, unsigned int tag)
++static inline bool cv_ff_codec_tag_list_match(const AVCodecTag *const *tags, enum CV_CODEC_ID id, unsigned int tag)
+ {
+     int i;
+     for (i = 0; tags && tags[i]; i++) {

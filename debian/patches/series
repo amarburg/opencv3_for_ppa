@@ -2,3 +2,4 @@ build-static-libs
 support_multiarch
 fix_path_of_opencl_headers
 my_notes_in_readme
+use_CV_CODEC_ID_not_AVCodecID
