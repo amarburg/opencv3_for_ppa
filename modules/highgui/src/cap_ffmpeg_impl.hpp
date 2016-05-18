@@ -60,6 +60,7 @@ extern "C" {
 #include "ffmpeg_codecs.hpp"
 
 #include <libavutil/mathematics.h>
+#include <libavutil/opt.h>
 
 #ifdef WIN32
   #define HAVE_FFMPEG_SWSCALE 1
@@ -1869,6 +1870,7 @@ bool CvVideoWriter_FFMPEG::open( const char * filename, int fourcc,
 
     AVCodec *codec;
     AVCodecContext *c;
+AVDictionary *opts = NULL;
 
 #if LIBAVFORMAT_BUILD > 4628
     c = (video_st->codec);
@@ -1896,10 +1898,18 @@ bool CvVideoWriter_FFMPEG::open( const char * filename, int fourcc,
     c->bit_rate_tolerance = (int)lbit_rate;
     c->bit_rate = (int)lbit_rate;
 
+    if( c->codec_id == AV_CODEC_ID_H264 ) {
+	fprintf(stderr, "Setting h264 special sauce!\n");
+	av_dict_set( &opts, "vprofile","high",0);
+	av_dict_set(&opts, "preset","medium",0);
+
+	av_opt_set(c->priv_data, "preset", "medium", 0);
+    }
+
     /* open the codec */
     if ((err=
 #if LIBAVCODEC_VERSION_INT >= ((53<<16)+(8<<8)+0)
-         avcodec_open2(c, codec, NULL)
+         avcodec_open2(c, codec, &opts)
 #else
          avcodec_open(c, codec)
 #endif
@@ -1907,6 +1917,8 @@ bool CvVideoWriter_FFMPEG::open( const char * filename, int fourcc,
         fprintf(stderr, "Could not open codec '%s': %s", codec->name, icvFFMPEGErrStr(err));
         return false;
     }
+
+    av_dict_free( &opts );
 
     outbuf = NULL;
 
