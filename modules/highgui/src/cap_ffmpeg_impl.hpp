@@ -1870,7 +1870,6 @@ bool CvVideoWriter_FFMPEG::open( const char * filename, int fourcc,
 
     AVCodec *codec;
     AVCodecContext *c;
-AVDictionary *opts = NULL;
 
 #if LIBAVFORMAT_BUILD > 4628
     c = (video_st->codec);
@@ -1898,18 +1897,46 @@ AVDictionary *opts = NULL;
     c->bit_rate_tolerance = (int)lbit_rate;
     c->bit_rate = (int)lbit_rate;
 
+    // AVDictionary *opts = NULL;
     if( c->codec_id == AV_CODEC_ID_H264 ) {
-	fprintf(stderr, "Setting h264 special sauce!\n");
-	av_dict_set( &opts, "vprofile","high",0);
-	av_dict_set(&opts, "preset","medium",0);
+      fprintf(stderr, "Setting h264 special sauce!\n");
+      // av_dict_set( &opts, "vprofile","high",0);
+      // av_dict_set( &opts, "preset","medium",0);
 
-	av_opt_set(c->priv_data, "preset", "medium", 0);
+      // From:
+      //  http://stackoverflow.com/questions/15980235/how-to-set-x264-baseline-profile-with-libav-in-c?rq=1
+      // doesn't seem to work
+      // av_opt_set(c->priv_data, "preset", "medium", 0);
+
+      // http://stackoverflow.com/questions/9173012/ffmpeg-libx264-avcodeccontext-settings?lq=1
+      // http://clementscode.blogspot.com.tr/2014/02/aforge-ffmpeg-and-h264-codec-default.html
+      c->bit_rate = 500*1000;
+      c->bit_rate_tolerance = 0;
+      c->rc_max_rate = 0;
+      c->rc_buffer_size = 0;
+      c->gop_size = 40;
+      c->max_b_frames = 3;
+      c->b_frame_strategy = 1;
+      c->coder_type = 1;
+      c->me_cmp = 1;
+      c->me_range = 16;
+      c->qmin = 10;
+      c->qmax = 51;
+      c->scenechange_threshold = 40;
+      c->flags |= CODEC_FLAG_LOOP_FILTER;
+      c->me_method = ME_HEX;
+      c->me_subpel_quality = 5;
+      c->i_quant_factor = 0.71;
+      c->qcompress = 0.6;
+      c->max_qdiff = 4;
+      // c->directpred = 1;
+      // c->flags2 |= CODEC_FLAG2_FASTPSKIP;
     }
 
     /* open the codec */
     if ((err=
 #if LIBAVCODEC_VERSION_INT >= ((53<<16)+(8<<8)+0)
-         avcodec_open2(c, codec, &opts)
+         avcodec_open2(c, codec, NULL)
 #else
          avcodec_open(c, codec)
 #endif
@@ -1918,7 +1945,7 @@ AVDictionary *opts = NULL;
         return false;
     }
 
-    av_dict_free( &opts );
+    //av_dict_free( &opts );
 
     outbuf = NULL;
 
