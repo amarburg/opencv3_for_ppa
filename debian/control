@@ -324,7 +324,7 @@ Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
  libopencv3-core-dev (= ${binary:Version}),
- libopencv3-video-io (= ${binary:Version}),
+ libopencv3-videoio (= ${binary:Version}),
  libavcodec-dev (>= 0.svn20080206),
  libavformat-dev,
 	libgtk2.0-dev,
